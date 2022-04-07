@@ -63,7 +63,7 @@ form#todoListForm {
     flex-wrap: nowrap;
     align-content: center;
     align-items: center;
-    width:100%;
+    width: 100%;
 }
 
 #todoListForm .form-control {
@@ -75,7 +75,7 @@ form#todoListForm {
     margin-top: 1vh;
     z-index: 3;
     height: 20px;
-    width:65%;
+    width: 65%;
 }
 
 #todoListForm .form-control.active {
@@ -104,7 +104,7 @@ form#todoListForm {
 
 #add {
     position: fixed;
-    left: 48%;
+    left: 48vw;
     bottom: 15%;
     display: flex;
     justify-content: center;
@@ -179,14 +179,15 @@ div#addTask {
     top: 25%;
     left: 10%;
     z-index: 4;
-    display:none;
+    display: none;
 }
 
 div#addTask.active {
-    animation:showAddTask 1s ease;
+    animation: showAddTask 1s ease;
 }
+
 div#addTask.no-active {
-    animation:closeAddTask 1s ease;
+    animation: closeAddTask 1s ease;
 }
 
 @keyframes showAddTask {
@@ -275,14 +276,22 @@ form[name="addTask"] {
         width: 98%;
     }
 
-    #add {
-        left:46vw;
-    }
 
     #search .form-control {
         width: 80%;
     }
+
+    #add {
+        left: 46vw;
+    }
 }
+
+@media only screen and (max-width: 480px) {
+    #add {
+        left: 43vw;
+    }
+}
+
 
 input#delete {
     width: 30px;
@@ -292,12 +301,12 @@ input#delete {
     background: red;
     border: 1px solid white;
     display: none;
-    margin-right:8px;
-    transition:transform 0.8s ease;
+    margin-right: 8px;
+    transition: transform 0.8s ease;
 }
 
-input#delete:hover{
-    transform:rotateY(360deg);
+input#delete:hover {
+    transform: rotateY(360deg);
 }
 
 input#delete.active {
@@ -306,7 +315,7 @@ input#delete.active {
 
 
 form#todoListForm .form-control.animation-deleted {
-    animation:animation-deleted 1s ease;
+    animation: animation-deleted 1s ease;
 }
 
 @keyframes animation-deleted {
@@ -314,7 +323,7 @@ form#todoListForm .form-control.animation-deleted {
         transform: scale(1);
         opacity: 1;
     }
-    
+
     100% {
         transform: scale(0);
         opacity: 0;

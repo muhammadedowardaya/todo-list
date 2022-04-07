@@ -276,7 +276,7 @@ form[name="addTask"] {
     }
 
     #add {
-        left:45%;
+        left:50vw;
     }
 
     #search .form-control {

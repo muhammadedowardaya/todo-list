@@ -80,7 +80,6 @@ function addTodoList(i, todo) {
 
 
 
-
     let ckbox = document.querySelectorAll('#todoListForm .form-control input#task');
 
     if (ckbox[i] != undefined) {

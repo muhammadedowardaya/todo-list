@@ -1,0 +1,318 @@
+html,
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    position: relative;
+    height: 100vh;
+}
+
+body {
+    color: #555 !important;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#layer {
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: #333;
+    position: absolute;
+    opacity: 0;
+    z-index: 3;
+    transition: 1s;
+    display: none;
+}
+
+h1.title {
+    margin: 20px 0;
+}
+
+.form-control input {
+    border-style: none;
+}
+
+.form-control {
+    border-style: none;
+    border-top-right-radius: 2em;
+    border-top-left-radius: 2em;
+    border-bottom-left-radius: 2em;
+    border-bottom-right-radius: 2em;
+    padding: 14px 18px;
+    background: white;
+    box-shadow: 1px 5px 15px #eee, -1px 0px 5px #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2em;
+}
+
+.form-control label {
+    margin-right: 20px;
+}
+
+
+form#todoListForm {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+    width:100%;
+}
+
+#todoListForm .form-control {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1em;
+    background-color: #1878b0;
+    color: white;
+    margin-top: 1vh;
+    z-index: 3;
+    height: 20px;
+    width:65%;
+}
+
+#todoListForm .form-control.active {
+    background: #6666;
+}
+
+#todoListForm .form-control:hover {
+    background-color: #1f93d7;
+    color: white;
+}
+
+#todoListForm .form-control.checked:hover {
+    background-color: #999;
+    color: white;
+}
+
+#todoListForm .form-control input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+}
+
+#todoList {
+    display: flex;
+    justify-content: center;
+}
+
+#add {
+    position: fixed;
+    left: 48%;
+    bottom: 15%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 5;
+}
+
+
+#add input[type="button"].active {
+    transition: 0.5s;
+    transform: rotate(225deg);
+    background: rgb(232, 60, 41);
+    color: white;
+    border: 1px solid white;
+}
+
+#add input[type="button"].active:hover {
+    background: white;
+    color: rgb(232, 60, 41);
+    border: 1px solid rgb(232, 60, 41);
+    font-weight: 800;
+}
+
+div#add input[type="button"]:hover {
+    color: white;
+    background: #1f93d7;
+    border: 1px solid white;
+    font-weight: 500;
+}
+
+#add input[type="button"] {
+    border: 1px solid #1f93d7;
+    width: 50px;
+    height: 50px;
+    border-radius: 2em;
+    background: white;
+    color: #1f93d7;
+    font-size: 2.7em;
+    font-weight: 500;
+    font-family: 'Courier New', Courier, monospace;
+    transition: 0.2s;
+    transform: rotate(-180deg);
+}
+
+#search {
+    margin-top: 20px;
+}
+
+#search .form-control {
+    width: 50%;
+    padding: 9px;
+}
+
+#search .form-control label {
+    margin: 0 20px;
+}
+
+#search .form-control input[name="searchText"] {
+    width: 100%;
+    padding: 8px 8px;
+    border: 2px solid #eaeaea;
+    border-radius: 2em;
+    box-sizing: border-box;
+    font-size: 0.8em;
+}
+
+
+
+div#addTask {
+    position: absolute;
+    width: 80%;
+    top: 25%;
+    left: 10%;
+    z-index: 4;
+    display:none;
+}
+
+div#addTask.active {
+    animation:showAddTask 1s ease;
+}
+div#addTask.no-active {
+    animation:closeAddTask 1s ease;
+}
+
+@keyframes showAddTask {
+    from {
+        transform: translateY(30vh);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0vh);
+        opacity: 1;
+    }
+}
+
+@keyframes closeAddTask {
+    0% {
+        transform: translateY(0vh);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(30vh);
+        opacity: 0;
+    }
+}
+
+
+
+
+form[name="addTask"] {
+    width: 80%;
+}
+
+#addTask .form-control {
+    padding: 9px;
+    justify-content: space-between;
+}
+
+#addTask .form-control input {
+    padding: 8px 8px;
+    border: 2px solid #eaeaea;
+    border-radius: 2em;
+    box-sizing: border-box;
+}
+
+#addTask .form-control input#addTaskInput {
+    width: 75%;
+}
+
+#addTask input[type="submit"] {
+    border-style: none;
+    width: 20%;
+    background: #1e5474;
+    color: white;
+}
+
+#addTask input[type="submit"]:hover {
+    background: #2b719a;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+
+    /* For mobile phones: */
+    #todoListForm .form-control {
+        margin: 0 40px;
+    }
+
+    #todoListForm .form-control {
+        width: 78%;
+        margin-top: 1vh;
+    }
+
+    #addTask .form-control {
+        width: 98%;
+    }
+
+    #search .form-control {
+        width: 80%;
+    }
+}
+
+input#delete {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    color: white;
+    background: red;
+    border: 1px solid white;
+    display: none;
+    margin-right:8px;
+    transition:transform 0.8s ease;
+}
+
+input#delete:hover{
+    transform:rotateY(360deg);
+}
+
+input#delete.active {
+    display: block;
+}
+
+
+form#todoListForm .form-control.animation-deleted {
+    animation:animation-deleted 1s ease;
+}
+
+@keyframes animation-deleted {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}

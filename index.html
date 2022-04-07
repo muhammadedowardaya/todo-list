@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1 class="text-center title">All Tasks</h1>
+    <div id="search" class="d-flex justify-content-center">
+        <div class="form-control">
+            <label for="searchText">Search</label>
+            <input type="text" id="searchText" name="searchText">
+        </div>
+    </div>
+    <hr style="margin-top:20px">
+    <div id="todoList">
+        <form id="todoListForm">
+            <div class="form-control">
+                <input type="button" value="X" id="delete">
+                <label for="task">Task TodoList</label>
+                <input type="checkbox" id="task" name="task">
+            </div>
+        </form>
+    </div>
+    <div id="add">
+        <input type="button" value="+" name="add">
+    </div>
+    <div id="addTask" class="justify-content-center">
+        <form name="addTask">
+            <div class="form-control">
+                <input type="text" name="addTask" id="addTaskInput">
+                <input type="submit" value="Add" name="addTaskButton" id="addTaskButton">
+            </div>
+        </form>
+    </div>
+
+    <div id="layer"></div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
